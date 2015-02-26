@@ -1,0 +1,31 @@
+<html>
+<head>
+  <script type="text/javascript">
+      function swap(myId, myVal, time){
+          if (myVal == "Punch In")
+          {
+              document.getElementById(myId).value = "Punch Out";
+              document.getElementById('punchText').innerHTML = "You are Punched in ON " + Date();
+          }
+          else
+          {
+              document.getElementById(myId).value = "Punch In";
+              document.getElementById('punchText').innerHTML = "You are Punched out ON " + Date();
+          }
+
+
+
+      }
+
+  </script>
+</head>
+
+<p>Your IP Address is = <%= @ip %> </p>
+<br>
+<p id="punchText"></p>
+
+
+<input type="button" id="punch" title="Punch In" value="Punch In" onclick="swap(this.id, this.value, 'hfsgfksj' )">
+
+
+</html>
