@@ -1,8 +1,10 @@
 PunchApp::Application.routes.draw do
 
+  resources :entries
+
   get "punch/punched_in"
   get "punch/punched_out"
-  root :to => 'application#index'
+  root :to => 'entries#index'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

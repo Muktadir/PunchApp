@@ -1,0 +1,14 @@
+<h1>New entry</h1>
+
+
+<p>Your IP Address is: <%= @entries.ip %></p>
+<p>You are Punched In: <%= @entries.in_time.strftime("On %d %B, %Y At %r") %></p>
+
+<%= form_for @entry, :url => entries_path(@entry) do |f| %>
+
+    <%= f.hidden_field :ip, :value => @ip %>
+    <%= f.hidden_field :in_time, :value => @time %>
+    <%= f.submit "Punch In" %>
+
+<% end %>
+
