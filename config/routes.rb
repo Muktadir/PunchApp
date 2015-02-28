@@ -1,9 +1,7 @@
 PunchApp::Application.routes.draw do
 
   resources :entries
-
-  get "punch/punched_in"
-  get "punch/punched_out"
+  
   root :to => 'entries#index'
 
 
