@@ -4,11 +4,17 @@ class EntriesController < ApplicationController
   # GET /entries
   # GET /entries.json
   def index
-    @entry = Entry.new
-    @ip = request.remote_ip
-    # Time.use_zone(@current_user.time_zone)
-    @time = Time.now
-    @entries = Entry.last
+    if user_signed_in?
+      @entry = Entry.new
+      @ip = request.remote_ip
+      # Time.use_zone(@current_user.time_zone)
+      @time = Time.now
+      @entries = Entry.last
+
+    else
+      redirect_to new_user_session_path
+    end
+
   end
 
   # GET /entries/1
